@@ -20,7 +20,8 @@ router.get("/", (req, res, next) => {
 router.post("/image", upload.single('image'), (req, res, next) => {
     console.log(req.file);
     res.status(200).json({
-        message : "uploaded"
+        message : "uploaded",
+        link : "https://facerest.heroku.com/"+req.file.filename
     })
 })
 
