@@ -14,7 +14,6 @@ const storage   = multer.diskStorage({
 const upload    = multer({ storage: storage });
 
 router.get("/", (req, res, next) => {
-    console.log(uploadDir);
     res.status(200).json({
         message : "Present API"
     })
