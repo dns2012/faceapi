@@ -36,3 +36,5 @@ app.use(express.static(__dirname + '/public'))
 app.get('/', (req, res, next) => {
     res.send("FACE RECOGNITION RESTFUL API");
 })
+
+console.log(process.env.PWD)
