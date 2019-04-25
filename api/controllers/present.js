@@ -2,7 +2,7 @@ const express   = require('express');
 const router    = express.Router();
 const multer    = require('multer');
 const path      = require('path');
-const uploadDir = path.join(__dirname + './../../public/upload');
+const uploadDir = process.env.PWD + '/public/upload';
 const storage   = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, uploadDir)
@@ -14,6 +14,7 @@ const storage   = multer.diskStorage({
 const upload    = multer({ storage: storage });
 
 router.get("/", (req, res, next) => {
+    console.log(uploadDir);
     res.status(200).json({
         message : "Present API"
     })
