@@ -30,7 +30,7 @@ app.use(morgan('dev'));
 app.use('/present', presentController);
 
 // PUBLIC STATIC DIRECTORY
-app.use(express.static(process.env.PWD + '/public'))
+app.use(express.static(__dirname + '/public'))
 
 
 app.get('/', (req, res, next) => {
